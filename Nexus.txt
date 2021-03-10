@@ -1,0 +1,25 @@
+NEXUS INSTALLATION OR CONFIGRATION :
+====================================
+# sudo apt update
+# sudo apt install openjdk-8-jdk -y
+# sudo update-alternatives --config java
+# vi /etc/envirment
+JAVA_HOME=" /usr/lib/jvm/java-8-openjdk-amd64"
+:wq!
+# cd /opt
+# sudo wget http://download.sonatype.com/nexus/3/nexus-3.22.0-02-unix.tar.gz
+# sudo tar -xvf nexus-3.22.0-02-unix.tar.gz
+# sudo mv nexus-3.22.0-02 nexus
+# visudo
+nexus ALL(ALL:ALL) NOPASSWD:ALL
+# sudo chown -R nexus:nexus /opt/nexus
+# sudo chown -R nexus:nexus /opt/sonatype-work
+# sudo vim /opt/nexus/bin/nexus.rc
+# run_as_user="nexus"
+# sudo ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+# su - nexus
+# /etc/init.d/nexus start
+Allow the port 8081 and access the nexus http://:8081
+
+Login as a min default username and password is admin/admin123
+
